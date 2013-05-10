@@ -19,6 +19,21 @@
 \usetikzlibrary{shapes,arrows}
 \usepackage{url}
 %\usepackage[]{times}
+\usepackage{enumerate}
+
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
+%\let\stdsection\section
+%\renewcommand\section\{\newpage\stdsection}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\headsep = 20pt
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textit{\nouppercase\leftmark}}}
+\rhead{}
+
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\COtwo}{CO\textsubscript{2} }

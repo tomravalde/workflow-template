@@ -1,6 +1,9 @@
 *.aux
 *.log
 *.pdf
+*.lof
+*.lot
+*.toc
 vc.tex
 aims/
 notes/

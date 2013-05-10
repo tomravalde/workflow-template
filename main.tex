@@ -3,9 +3,25 @@
 
 \immediate\write18{sh ./vc}
 \input{vc}
+
 \begin{document}
+
 \input{./tex/title.tex}
+\pagenumbering{roman} % this is returned to 'arabic' within intro.tex
+\input{./tex/abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+
 \input{./tex/intro.tex}
-\GITHash
+\clearpage
+\input{./tex/methods.tex}
+\clearpage
+\input{./tex/models.tex}
+\clearpage
+\input{./tex/conc.tex}
+\clearpage
+\appendix
+%\GITHash
 
 \end{document}
