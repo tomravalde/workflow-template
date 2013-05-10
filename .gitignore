@@ -1,0 +1,6 @@
+*.aux
+*.log
+*.pdf
+vc.tex
+aims/
+notes/
