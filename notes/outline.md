@@ -9,6 +9,7 @@
 - Environmental
 - Economic
 	- Bettencourt
+- Both of the above reflected in policy environments
 - Opportunities
 	- Synergies, nexus
 
@@ -112,6 +113,7 @@
 ## Report structure
 
 # Methods
+- Highlight theme of decentralisation within both fields of water and energy.
 
 ## Energy
 - Graph/plot of how energy models can be categorised?
