@@ -4,6 +4,8 @@
 *.lof
 *.lot
 *.toc
+*.bbl
+*.blg
 vc.tex
 aims/
 notes/
