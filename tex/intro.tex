@@ -2,13 +2,15 @@
 \pagenumbering{arabic}
 Introductory sentences.
 
+The rapid urbanisation of planet Earth is presenting both challenges and opportunitites in the way that finite resources are used in light of the challenges of climate change and resource depletion. \ldots This project therefore seeks to firstly take a broad look at the global picture of urbanisation and the challenges it presents, the policy background which arises out of this state of affairs and the ways in which the opportunities offer solutions to the challenges. Having considered the `big picture', the project focuses in specifically on the development of mathematical models  which optimise the integrated provision and management of energy, water and waste resources in an urban area. This Early Stage Assessment report therefore has two main aspects which reflect the ground to be covered in this study. Firstly, the big picture is considered as global urban trends are outlined and their implications as challenges and opportunities. The `urban metabolism' concept is introduced as an underlying theoretical concept which can be used to describe the links between trends, challenges and opportunities. This background information then motivates a research question. Secondly, the report moves on to describe various optimisation models in existence in the fields of energy, water and waste which can be used as a starting point in the development of an integrated resource management model, before going on to show the first steps already taken in developing a model.
+
 The subject of this thesis is an interesting topic of study. It requires both a broad understanding of the big picture of urban resource management in three areas (energy, water and waste), including knowledge of policy environments etc. coupled with an understanding of mathematical programming for optimsation models.
 
 The final outcome of this study will be a suite of tools which can be used to optimise the provision of water, waste and energy resources within an urban area, at a minimal financial and environmental cost, subject to various constraints. Before the methodology and models are described, the context of the project is outliend in this introduction, to motivate their development. Firstly, global urban trends are summarised before outlining the challenges and opportunities that come with urban areas. The concept of `urban metabolism' is introduced, which will provide the underlying theoretical framework for the study. Features of urban resource flows are then discussed in order to highlight opportunities for `resource integration'. Having established the context of the study, a precise `research question' is formulated to guide the rest of the research.
 
 Who is this useful for: urban planners etc.
 
-\subsection{Urban trends}
+\subsection{The world is urbanising}
 Three things can be said about urbanisation globally: (1) it is on the \emph{increase}; (2) this fact is \emph{important}; and (3) it follows from (1) and (2) that urbanisation is \emph{innevitable}. Firstly, the \emph{increase} in the global urban population is considered.
 
 Currently, urban areas are home to about half of the global population \citep{AREAS2012}\footnote{Note: statistics in this report will generally be from 2011 or earlier. More recent figures will not be recorded because they will need to be updated for the final submission anyway.}. By 2030, it is expected that the urban population will rise to 61\% of the total, and again to 70\% by 2050, as cities absorb population growth, and continue to receive migrants from rural areas, aand rural areas become reclassified as urban \citep{Cohen2006}. Two notable features of this urbanisation are that firstly, most of the growth is concentrated in the developing world, with Africa and Asia together accounting for 86\% of the increase in urban dwellers by 2050 \citep{York2011}; and that despite there being much attention on `megacities', the majority of urban growth will be in smaller cities (below 500000 people) in the forseable future). Cities of more than 10 million residents will accomodate less than 10\% of the urban population \citep{Cohen2006}.
@@ -21,22 +23,53 @@ This isn't to say that cities are without problems: the widespread presence of s
 
 Finally then, it must be the case that urbanisation is \emph{innevitable} due to the economic prosperity it brings to the developing world. Thus it is troubling to learn that \emph{``\ldots 72\% of developing countries have adopted policies designed to stem the tide of migration to their cities.''} GUARDIAN REFERENCE.
 
-\subsection{Challenges posed by urban areas}
+\subsection{Urbanisation poses challenges}
 Having considered urbanisation trends and their benefits, the challenges of urbanisation are now considered. There are two primary challenges---those of \emph{environmental strain} and \emph{economic sustainability}.
 
-IEA 71\% energy related emissions.
+Considering the environmental strain, there are multiple problems associated with urban areas including land-use impacts, resource scarcity, poor water quality, emissions, the heat-island effect and eutrophicaion \citep{Cai2011}. Whilst currently home to just over 50\% of the global population, urban areas are responsible for around 60\% of primary energy use and 71\% of the global energy-related greenhouse gas emissions \citep{IEA2008}. For example, \citet{Grubler2009} shows the relationship between urban sprawl and the emissions from the associated increase in transport use (as journeys are required to be more frequent and longer).
 
-\citep{Bettencourt2007} Innovation cycles
-\citep{Agudelo-Vera2011} global impacts of resourec problems.
+Urbanisation results in a growing requirement for urban water delivery in view of growth in the urban population and a demand for a higher quality of life resulting in `water stress'. Associated with the increasing demand is the need to treat the water and prevent contamination. This demand for water in high quantitiies comes with a financial burden \citep{Diagger2009}. \citet{Kennedy} illusrates the problem of urban water sustainability by considering the relationship between urbanisation and groundwater. Shallow wells are sufficient to supply a population in the urban development stage, with wastewater discharging to a watercourse. As the population grows and water extraction rates rise, the water table falls requiring the digging of deeper wells and any shallow groundwater can become contminated by discharge wastewater. Thus water must be sourced (at significant expense) from outside the city, changing the city's groundwater characteristics such that the water table can rise above its original level and even cause flooding. In summary then, water security issues in urban areas are causing economic, health and environmental concerns.
 
+\citep{Gabriel2005} Uncertainty in renewables.
+
+Moving to consider wastemanagement, there are a number of issues that urban areas face. For example, the risk of contaminating groundwater and public opposition to waste disposal near residential areas \citep{Li2006}, as well as growing waste generation rates and decreasing disposal capacity \citep{Lu2009}. In Greece, for example, municipal solid waste management has reached a `critical point'.
+
+Moreover, the challenges faced in the energy, water and waste field are interalated. Population growth increases demands for water and energy significantly, and economic growth increases this demand on a per capita basis as people improve their living standards. With increased water demands, there will come increasing energy demands (for treatment and distribution) and increased wastewater generation. Furthermore, climate change will limit the availability of water in many places and will therefore induce high levels of spending and energy consumption in extracting water resources for human use (through desalination and other treatment methods). The increase in energy consumption will then exacerbate climate change invoking a self-reinforcing challenge \citet{Webber2011}.
+
+The challenges associated with the various resources are being reflected in policy decisions. For example \citet{Clift2000}. And London. And subsistence villages \citep{Haberl2003}.
+
+London
+\citep{Zabel2011} Lots to landfill and wasted heat.
+\citep{Geng2010} Landfill capacity to be reached.
+\citep{Keirstead2012} stats, renewables targets.
+
+note problem of leakage!
+
+There is now an increasing emphasis on developing policies to tackle the issues thrown-up by urbanisation. For example, \citet{Agudelo-Vera2011} argues that resource management should play a key-role in the sustainabile development of towns and cities, resulting from resource management should play a key role in the discipline of urban planning. It is argued that this it is not a new idea to have a problem solving focus to urban planning---historically it's always been about meeting a particular need, whether that's 
+
+\citep{Agudelo-Vera2011} global impacts of resource problems. Link to urban planning and sustainability. This paper also sets the problem is internal and external.
+London as an example. 
+\citep{Chen2006} Link to resource use, environment, policy and technology options.
+
+Two manifestations: on the city and on the world.
 \citep{Batt2010} to summarise.
+\citep{Newman1999} Don't harm human opps.
+\citep{Sirikitputtisak} Long term view in the energy sector.
+\citep{Winiwater2011} Efficiency isn't enough. We need absolute dematerialisation. Take-back effect.
 
+
+Economic
+\citep{Bettencourt2007} Innovation cycles
 
 
 However, as well as presenting these challenges, there are also unique opportunities inherent to urban spaces which can be exploited.
 
 \subsection{Opportunities afforded by urban areas}
 The density of urban areas, and the resulting co-location of infrastructures is the source of a potential solution to the challenges posed by urban areas.
+
+\citep{Agudelo-Vera2011} History of changing purposes/strategies in urban design. 
+'There is a need for a comprehensive framework that integrates RM and UP.'
+Rees2009 quote about 'fully integrating'.
 
 An underlying theoretical framework is required which can help us measure the scale of the challenges presented; the opportunities on offer; and the success of the models. The 'urban metabolism' concept will serve this purpose.
 
