@@ -3,6 +3,7 @@
 ## Urban trends
 - Increase
 - Important
+	- Include a diagram of the virtuous circle?
 - Innevitable
 
 ## Challenges
