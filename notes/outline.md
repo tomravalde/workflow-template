@@ -91,7 +91,7 @@
 	- Multiscale approach reveals the large area Paris depends.
 	- Shows how policies concerning waste management can reduce construction imports: identifies a target area for dematerialisation. E.g. by reducing demand (by opposing urban extension) and increasing recyling of construction materials. This is shown through the disparity whereby local extraction < regional consumption, and local extraction = landfill.
 
-- @Ayers2000
+- @Ayers2000 (Comment of EF concept).
 	- assumes that vegetation is the only way to absorb CO2
 	- assumes that fossil fuels are the only way to generate energy
 	- neglects methane, sulphur and nitrogen
@@ -142,6 +142,10 @@
 - Gannt chart
 
 # Appendices
+
+## Questions brought up by the study
+
+## Process catalogue
 
 # Code
 
