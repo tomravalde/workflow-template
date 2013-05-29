@@ -1,0 +1,315 @@
+\documentclass{beamer}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{amssymb, amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\captionsetup{labelformat=empty}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\DeclareMathOperator*{\min}{min}
+\usetheme{Goettingen}
+
+\setbeamertemplate{footline}[frame number]
+\title[]{Highly integrated urban water, waste and energy resources}
+\subtitle{Project review meeting}
+\author[]{Tom Ravalde}
+\date{April 30, 2013}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\section[Outline]{}
+%\frame{\tableofcontents}
+
+\section{Introduction}
+\begin{frame}
+	Urban trends
+	\begin{itemize}
+		\item Important
+		\item Inevitable
+		\item Increase
+	\end{itemize}
+	Challenges
+	\begin{itemize}
+		\item Environmental strain
+		\item Economic sustainability
+	\end{itemize}
+	Opportunity
+	\begin{itemize}
+		\item Synergies between infrastructures
+		\item Urban metabolism (theoretical basis)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Research question}
+	How can we improve an area's urban metabolism by implementing models which optimise the integrated management of energy, water and waste?
+	\begin{enumerate}
+		\item \textbf{Research}
+			\begin{itemize}
+				\item Motivation and opportunity 
+				\item Methods
+			\end{itemize}
+		\item \textbf{Develop} models
+		\item \textbf{Apply} 
+	\end{enumerate}
+
+	\begin{table}[h]
+		\centering
+		\begin{footnotesize}
+			\begin{tabular}{lp{7cm}}
+			\toprule
+			Subsitance village & Optimise distribution of resource quantity and quality \\
+			City development & Introduce spatial disaggregation \\
+			Water-based & Spatial and temporal disaggregation \\
+			\bottomrule
+		\end{tabular}
+		\end{footnotesize}
+	\end{table}
+\end{frame}
+\section{Modelling approaches}
+
+\begin{frame}
+	\frametitle{Categorising models}
+	\begin{itemize}
+		\item Purpose
+		\item Scale
+		\item Disaggregation
+			\begin{itemize}
+				\item Spatial
+				\item Temporal
+			\end{itemize}
+		\item Multi-period
+		\item Methods
+			\begin{itemize}
+				\item Linear
+				\item Non-linear
+				\item Heuristics
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Energy}
+\begin{frame}
+	\frametitle{Energy models}
+	Optimal selection of technologies and strategies to meet demand, to achieve an objective, subject to constraints
+	\begin{itemize}
+		\item MILP methods dominate
+	\end{itemize}
+	\begin{exampleblock}{Optimisation based design of a district energy system for an eco-town in the United Kingdom\footnote{Weber and Shah (2011)}}
+		Reliably meet increasing electricity demand without increasing emissions.
+		\begin{itemize}
+			\item Renewables
+			\item Centralised and distributed supply
+			\item Linearises non-linear technology models
+			\item Pseudo-stochastic wind conditions
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\subsection{Water}
+\begin{frame}
+	\frametitle{Water models}
+	\begin{itemize}
+		\item Quality and quantity
+		\item Models divide into three levels:
+			\begin{enumerate}
+				\item Low: WDNs (pipe dimensions)
+				\item Medium: Pumps and reservoirs
+				\item High: Superstructure (especially found in chemical engineering literature)
+			\end{enumerate}
+		\item Non-linear methods
+		\item `Integrated systems' increasingly prevelent
+	\end{itemize}
+\end{frame}
+
+\subsection{Waste}
+\begin{frame}
+	\frametitle{Waste models}
+	\begin{itemize}
+		\item \emph{Aim}: distribute multiple streams from multiple origins to multiple destinations over multiple periods
+		\item \emph{Results}: 
+			\begin{itemize}
+				\item Waste flow [tons/wk] to facility
+				\item Capacity expansion requirements
+			\end{itemize}
+		\item `Two-stage' methods are common for problems where constraints have probability distributions.
+			\begin{enumerate}
+				\item Make decision before random variable is made known
+				\item Second decision to minimise `infeasibility penalties'
+			\end{enumerate}
+		\item Numerous solution techniques:
+			\begin{itemize}
+				\item FCCP
+				\item ICCMILP
+				\item fuzzy MCDA
+				\item IMIBIP
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{Model development}
+\begin{frame}
+	\frametitle{Model development}
+	\begin{itemize}
+		\item Can't simply `bolt' together  models from each sub-discipline
+		\item Superstructure approach
+		\begin{figure}
+			\centering
+		\includegraphics[scale=0.3]{RTN.jpg}
+		\caption{Resource-technology network\footnote{Samsatli et al}}
+		\end{figure}
+		\item Material quality (e.g. water or biomass) an important consideration
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Tat Hamlet}
+\begin{frame}
+	\frametitle{Develop model for village}
+	\begin{align*}
+		\min_{I_r,E_r,NP_p} \Bigg\{z&=\sum_{r=1}^R c_rI_{r} \Bigg\}
+	\end{align*}
+	Subject to
+	\begin{align*}
+		I_r&=D_r-\sum_{p=1}^{P}k_{rp} P_p NP_p + E_r \\
+		NP_{min} &\leq NP \leq NP_{max} \\
+		I_r &\geq 0
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Develop model for village}
+	\begin{itemize}
+		\item Objective: Minimise cost of importing resources
+		\item Constraint: Mass balance of resource in to and out of processes
+	\end{itemize}
+
+	\begin{table}[h]
+		\centering
+		\begin{footnotesize}
+			\begin{tabular}{lp{7cm}}
+			\toprule
+			\multicolumn{2}{c}{Parameters} \\
+		        $c_r$ & Cost of resource \\		
+			$D_r$ & Demand for resource \\
+			$k_{rp}$ & Coefficient defining production/consumption ratio of resource in process \\
+			$P_p$ & Rate of process operation \\
+			\midrule
+			\multicolumn{2}{c}{Variables} \\
+			$I_r$ & Import of resource \\ 
+			$E_r$ & Export of resource \\
+			$NP_p$ & Number of each process \\
+			\bottomrule
+			\end{tabular}
+		\end{footnotesize}
+	\end{table}
+\end{frame}
+
+\subsection{Water network}
+\begin{frame}
+	\frametitle{Water sub-network (1)}
+	Focus in on this to establish quality controls (for contamination and head)
+	\begin{align*}
+		\min_{I_r,E_r,NP_p} \Bigg\{z&=\sum_{r=1}^R c_rI_{r} \Bigg\}
+	\end{align*}
+	Subject to
+	\begin{align*}
+		I_r&=D_r-\sum_{p=1}^{P}k_{rp} P_p NP_p + E_r \\
+		NP_{min} &\leq NP \leq NP_{max} \\
+		I_r &\geq 0 \\
+		P_p k_{rp} NP_p &\geq (C_{min})_p-(C_{in})_p \\
+		P_p k_{r_{out}p} NP_p gh &\leq P_p k_{r_{in}p}NP_p
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Water sub-network (1)}
+	Additional constraints:
+	\begin{itemize}
+		\item Introduce minimum water qualities in the mass balance
+		\item Ensure enough energy to raise the head of water for pumping
+	\end{itemize}
+	Additional parameter:
+	\begin{itemize}
+		\item $C_{p,min}$ Allowable contaminant concentration into a process
+	\end{itemize}
+	Additional variable:
+	\begin{itemize}
+		\item $C_{p,in}$ Contaminant concentration into a process
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Water sub-network (2)}
+	\begin{itemize}
+		\item Objective: Minimise cost of importing resources of required qualities
+		\item Constraints:
+			\begin{itemize}
+				\item Resource quanitity production rate
+				\item Resource quality production rate
+				\item Resource quantity mass balance
+				\item Resource quality  mass balance
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Water sub-network (2)}
+	\begin{table}[h]
+		\centering
+		\begin{footnotesize}
+			\begin{tabular}{lp{7cm}}
+			\toprule
+			\multicolumn{2}{c}{Parameters} \\
+			$\mbox{r\_qual}_{rq}$ & Reference unit of resource qualities (e.g. J, kg, head etc.) \\
+			$\mbox{prod\_coeff}_{prq}$ & Coefficient defining production/consumption ratio of resource in a process \\
+			$\mbox{D\_qual}_{rq}$ & Resource quality demanded by user \\
+			$\mbox{D\_qty}_r$ & Resource quantity demanded by user \\
+			$c_r$ & Unit cost of resource of given quality \\
+			$\mbox{qual\_coeff}_{prq}$ & Boolean indicating if we care about the quality of a resource for any process \\
+			$\mbox{cheat}_{rq}$ & \\
+			\midrule
+			\multicolumn{2}{c}{Variables} \\
+			$I_r$ & Resource imports \\
+			$\mbox{prod\_rate}_p$ & Process rate \\
+			$\mbox{prod}_{prq}$ & Resource qualities produced in processes \\
+			$\mbox{prod\_qty}_{pr}$ & Resource quantities produced in processes \\
+			$E_r$ & Resource exports \\
+			\bottomrule
+		\end{tabular}
+		\end{footnotesize}
+	\end{table}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Water sub-network (2)}
+	\begin{align*}
+		\min_{I_r,\mbox{p\_rate}_p,\mbox{p}_{prq},\mbox{p\_qty}_{pr},E_r} \Bigg\{z&=\sum_{q=1}^Q \sum_{r=1}^R c_{rq}\mbox{r\_qual}_{rq}I_{r}\Bigg\}
+	\end{align*}
+	Subject to
+	\begin{align*}
+		0=\mbox{prod\_qty}_{pr} \mbox{r\_qual}_{rq} &- \mbox{prod}_{prq} \mbox{cheat}_{rq} \\ &\mbox{if } \mbox{qual\_coeff}_{prq} \neq 1 \\
+		\mbox{prod}_{prq} &= \mbox{prod\_rate}_{p} \mbox{prod\_coeff}_{prq} \\
+		0 &= \sum_{r=1}^R \Bigg(\mbox{r\_qual}_{rq} I_r + \sum_{p=1}^P \mbox{prod}_{prq} \\ &- \mbox{D\_qual}_{rq} - \mbox{r\_qual}_{rq} E_r \Bigg) \\
+		0 &= I_r + \sum_{p=1}^P\mbox{prod\_qty}_{pr} - \mbox{D\_qty}_{r}-E_r 
+	\end{align*}
+\end{frame}
+
+\section{Conclusions and future work}
+\begin{frame}
+	\frametitle{Conclusions and future work}
+	\begin{itemize}
+		\item Build resource quality/quantity models for identical water neworks using forumlations (1) and (2) for comparison
+		\item Evaluate methods and results in ESA report
+		\item Extend to other quality parameters and resources
+		\item Build optimisation model for all village resources and processes which considers quality and quantity of resources
+		\item Extend to allow spatial and then temporal discretisation
+	\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,5 +1,4 @@
-\section{Methods}
-\label{sec:methods}
+\section{Methods} \label{sec:methods}
 The design of the integrated resource model will be informed by existing models in the energy, water and waste sectors. The challenge is to develop a model which can handle resources of mutliple types and qualities whilst remaining computationally tractable.
 x approaches to dealing with quality to explore: eqns, food paper, multiple resources etc.
 
@@ -63,6 +62,20 @@ In water system design, the objective fuctions and constraints are frequently no
 Summary---use of solution techniques from the low and medium level problems.
 
 \subsection{Waste models}
+Finally, waste management models are considered. Broadly, these aim to allocate multiple waste streams from multiple origins to multiple destinations over multiple periods at minimum cost. 
+A review of waste management models by \citet{Morrissey2004} shows the discipline has moved on from considering simply the minimisation of financial cost, to focus on integrated waste management which considers the benefits of recycling and energy generation. It is obviously the latter class of models which should be considered in this study, requiring multi-objective techniques.
+
+These tend to be long-term and stochastic due to uncertainties in waste generation rates.
+
+A simple model, such as that of \citet{Bovea2006} can be used to assess the environmental impact of various waste management strategies (which each have their own diversion rates of waste streams to landfill, recycling, composting, energy generation and so on). Thus each of the possible destinations must each have their own model which spcifies emissions and energy consumption and so on. Thus combining all the life-cycle assessment (LCA) results from all the waste management options will give an environmental impact assessment which can be compared between the strategies. Running the simulations confirm the environmental benefits which can be achieved from recycling and composting. A similar approach is taken by \citep{Eriksson2002} which combines sub-models for incineraion, digestion and other processes to use LCA to compare waste management plans.
+% should the above go in the Opportunities section?
+
+However, optimisation (rather than simulation) is the concern of this project. The optimisation models in waste management tend to be multi-period (due to capacity expansion requirements over the long-term---especially for landfill); and stochastic (due to the uncertainty of waste generation rates). The objective is to find the allocation (for example in tons/week) of waste flow to various facilities; and capacity expansion requirements over the long-term.
+
+Variations (such as location).
+
+
+% integration with energy models.
 
 \subsection{Conclusion}
 The literature review reveals that there is nothing in the way of an integrated resource model and very little which considers resource quality---both of which are required in model.
