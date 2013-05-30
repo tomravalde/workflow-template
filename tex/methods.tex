@@ -62,19 +62,32 @@ In water system design, the objective fuctions and constraints are frequently no
 Summary---use of solution techniques from the low and medium level problems.
 
 \subsection{Waste models}
+%Accounting and optimisation.
 Finally, waste management models are considered. Broadly, these aim to allocate multiple waste streams from multiple origins to multiple destinations over multiple periods at minimum cost. 
 A review of waste management models by \citet{Morrissey2004} shows the discipline has moved on from considering simply the minimisation of financial cost, to focus on integrated waste management which considers the benefits of recycling and energy generation. It is obviously the latter class of models which should be considered in this study, requiring multi-objective techniques.
 
 These tend to be long-term and stochastic due to uncertainties in waste generation rates.
 
-A simple model, such as that of \citet{Bovea2006} can be used to assess the environmental impact of various waste management strategies (which each have their own diversion rates of waste streams to landfill, recycling, composting, energy generation and so on). Thus each of the possible destinations must each have their own model which spcifies emissions and energy consumption and so on. Thus combining all the life-cycle assessment (LCA) results from all the waste management options will give an environmental impact assessment which can be compared between the strategies. Running the simulations confirm the environmental benefits which can be achieved from recycling and composting. A similar approach is taken by \citep{Eriksson2002} which combines sub-models for incineraion, digestion and other processes to use LCA to compare waste management plans.
-% should the above go in the Opportunities section?
+A simple model, such as that of \citet{Bovea2006} can be used to assess the environmental impact of various waste management strategies (which each have their own diversion rates of waste streams to landfill, recycling, composting, energy generation and so on). Thus each of the possible destinations must each have their own model which spcifies emissions and energy consumption and so on. Thus combining all the life-cycle assessment (LCA) results from all the waste management options will give an environmental impact assessment which can be compared between the strategies. Running the simulations confirm the environmental benefits which can be achieved from recycling and composting. A similar approach is taken by \citep{Eriksson2002} which combines sub-models for incineraion, digestion and other processes to use LCA to compare waste management plans. Finally, a model is discussed here which overlaps with energy management. \citet{Geng2010} proposes a model which uses geographic proximities to make use of synergies and directly transfer municipal solid waste (MSW) to industrial applications and WtE generation. The emissions and costs associated with various processes within the waste-energy nexus (including transport, facilty construction and carbon savings from landfill diversion) are calculated in various scenarios for comparison. Three stages are required in this model:
+\begin{enumerate}
+	\item Develop technology database of lifecycle environmental costs.
+	\item Develop spatial database of waste generation, facilities and transport distances.
+	\item Investigate different scenarios of waste allocation, for comparison.
+\end{enumerate}.
+	
+	% should the above go in the Opportunities section?
+		
 
-However, optimisation (rather than simulation) is the concern of this project. The optimisation models in waste management tend to be multi-period (due to capacity expansion requirements over the long-term---especially for landfill); and stochastic (due to the uncertainty of waste generation rates). The objective is to find the allocation (for example in tons/week) of waste flow to various facilities; and capacity expansion requirements over the long-term.
+However, optimisation (rather than simulation) is the concern of this project. The optimisation models in waste management tend to be multi-period (due to capacity expansion requirements over the long-term---especially for landfill); and stochastic (due to the uncertainty of waste generation rates). The objective in the \emph{short term} is to find the allocation (for example in tons/week) of waste flow to various facilities; and capacity expansion requirements (and other strategic planning decisions) in the \emph{long-term}. For example, \citet{Guo2009} considers the long term problem of waste management in a situation where there are uncertainties in system parameters and their interactions. in order to determine optimal capacity expansions and flow allocations at minimum cost. Fines are incurred for exceeding the capacity of a system. A method known as the `inexact fuzzy chance-constrained two-stage mixed integer program. In these problems, some constraints exhibit two typeds of uncertainties. Firslty, those that are given by a probability distribution (such as waste generation rates and transport costs); secondly, those given by intervals. Therefore, flow allocations and investment decisions have to take place before the value of the random variable is made known. The second stage of the problem is to make another decision which minimises penalties incurred in view of the probabilistic excess waste flows. The objective is to minimise costs, subject to constraints on capacity, mass balances and facility expansions. Similar models are proposed by \citet{Li2006}, \citet{He2009} and \citet{Xi2010}. 
 
-Variations (such as location).
+A variation of the model is proposed by \citet{Cheng2003} which chooses the optimal location for a landfill site. The challenge is that costs are dependent on waste flows, which themselves are dependent on the site; and the site choice itself is depedent on cost. 
+\begin{enumerate}
+	\item In a first stage, the model estimates the costs of developing particular sites, subject to capacity and mass balance constraints. `Inexact mixed integer linear programming' (IMILP) is used to handle uncertain parameter values.
+	\item The site costs are then used as inputs into a multi-criteria decision analysis (MCDA) (of which there are various methods), along with impacts such as groundwater contamination and public acceptence. The optimal solution is then found, along with waste allocation rates.
+\end{enumerate}
 
 
+In summary then, it can be said that waste management models are dominated by concerns about uncertainty.
 % integration with energy models.
 
 \subsection{Conclusion}
