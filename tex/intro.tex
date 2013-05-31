@@ -8,22 +8,36 @@ The rapid urbanisation of the globe is presenting both challenges and opportunit
 \subsection{The world is urbanising}
 Three things can be said about urbanisation globally: (1) it is on the \emph{increase}; (2) urban centres are economically \emph{important}; and (3) it follows from (1) and (2) that the continued trend of urbanisation is \emph{innevitable}. 
 \begin{enumerate}
-	\item Firstly, the \emph{increase} in the world's urban population is considered. Currently, urban areas are home to about half of the global population \citep{AREAS2012}\footnote{Note: statistics in this report will generally be from 2011 or earlier. More recent figures will not be recorded because they will need to be updated for the final submission anyway.}. By 2030, it is expected that the urban population will rise to 61\% of the total, and again to 70\% by 2050. There are three explanations for this \citep{Cohen2006}:
+	\item Firstly, the \emph{increase} in the world's urban population is considered. Currently, urban areas are home to about half of the global population \citep{AREAS2012}\footnote{Note: statistics in this report will generally be from 2011 or earlier. More recent figures will not be recorded because they will need to be updated for the final submission anyway.}. By 2030, it is expected that the urban population will rise to 61\% of the total, and again to 70\% by 2050 (Figure~\ref{fig:urban_trends})\footnote{A breakdown of UN population statistics is availabe from \texttt{http://esa.un.org/wup2009/unup/index.asp?panel=1}.}. There are three explanations for this \citep{Cohen2006}:
 	\begin{enumerate}[(i)]
 		\item Cities absorb population growth; 
 		\item migration from rural areas;
 		\item rural areas become reclassified as urban. 
 	\end{enumerate}	
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{./img/world_total_urban.pdf} 
+	\caption{Global urbanisation trends according to \citet{AREAS2012}.} \label{fig:urban_trends}
+\end{figure}
+
 	Urbanisation trends exhibit two notable features. Firstly, the majority of growth is concentrated in the developing world, with Africa and Asia together accounting for 86\% of the increase in urban dwellers by 2050 \citep{York2011}. Secondly, despite much excitement about `megacities', urban growth is mainly in smaller cities (below 500,000 people) in the forseable future). Cities of more than 10 million residents will accomodate less than 10\% of the urban population \citep{Cohen2006}.
+
 
 These predictions aren't just the view of a small number, but widely accepted opinion. Thus even \citet{Cohen2004} who takes a skeptical look at urbanisation forecasts (pointing out that historical forecasts can be overestimates by more than 75\%; and that there is no universally consistent definition of `urban'\footnote{See for example \citet{DepartmentforCommunitiesandLocalGovernment2006}.}) concludes: \emph{``Neverthelss, despite all the problems of error and inaccuracy and the long-standing definitional problems that have never been overcome, it is clear that the world is still in the midst of a sweeping and profound urban transformation that is literally changing the face of the planet.''}
 
-	\item The mechanism of urbanisation outlined by \citet{WorldBank2008a} shows how and why urbanisation occurs, relating the process to the economic \emph{importance} of urban areas. Urban centres arise as people migrate from the countryside in search of employment and better access to services (such as education and healthcare). As cities grow, they begin to specialise with firms taking advantages of economies of scale. Cities become `agglomeration economies' when multiple types of firms and industries occupy the space, facilitating knowledge spillovers, and helping each other, such that individual firms can specialise. At the same time, transport (and hence trade) costs reduce. Therefore scale economies and agglomeration economies act to increase trade, and hence the prosperity of an area, attracting more migrants to the area. Thus a virtuous circle arises whereby city size and economic growth feed each other. This mechanism explains why it is estimated that 80\% of global GDP is generated in urban areas \citep{AREAS2012}.
+	\item The mechanism of urbanisation outlined by \citet{WorldBank2008a} shows how and why urbanisation occurs, relating the process to the economic \emph{importance} of urban areas. Urban centres arise as people migrate from the countryside in search of employment and better access to services (such as education and healthcare). As cities grow, they begin to specialise with firms taking advantages of economies of scale. Cities become `agglomeration economies' when multiple types of firms and industries occupy the space, facilitating knowledge spillovers, and helping each other, such that individual firms can specialise. At the same time, transport (and hence trade) costs reduce. Therefore scale economies and agglomeration economies act to increase trade, and hence the prosperity of an area, attracting more migrants to the area. Thus a virtuous circle arises whereby city size and economic growth feed each other (see Figure~\ref{fig:urbanCycle}). This mechanism explains why it is estimated that 80\% of global GDP is generated in urban areas \citep{AREAS2012}.
 
+\begin{figure}[h]
+	\centering
+	\input{./img/urbanCycle}
+	\caption{Virtuous circle of urban growth and economic prosperity.} \label{fig:urbanCycle}
+\end{figure}
 Growing cities in developing countries aren't without their problems, for example, the widespread presence of slums. The World Bank describes these as `growing pains', and notes that they have historically existed in cities like London, but are now no longer to be seen. It is therefore confirmed that urbanisation is a clear long term route to economic prosperity. It is good news that the urbanisation patterns seen historically in OEDC countries are being replicated in the developing world \citep{WorldBank2008a}. 
 
 	\item It follows therefore that urbanisation is \emph{innevitable} due to the economic prosperity it brings to the developing world. Thus it is troubling to learn that \emph{``\ldots 72\% of developing countries have adopted policies designed to stem the tide of migration to their cities.''} \citep{Donald2012}.
 \end{enumerate}
+
 
 \subsection{Urbanisation poses challenges} \label{sec:urban_challenges}
 Having considered urbanisation trends and the associated economic benefits, two primary challenges of urbanisation are now considered---those of \emph{environmental strain} and \emph{economic sustainability}.
@@ -92,7 +106,19 @@ This solution exhibits different behaviours, according the the situation:
 		\item \label{itm:collapse} \emph{Resources become limited.} However, since resources are limited, then there will come a time when they run out and $N(0)>(R/Y)^{1/(\beta-1)}$, and stagnation and collapse occurs. 
 	\end{enumerate}
 \end{enumerate}
-To avoid the economic collapse of case \eqref{itm:collapse}, a transformation needs to be undergone which resets the initial conditions $Y_0$ and $N(0)$, to begin a new cycle of greater-than-exponential growth. However, $t_c$ for each cycle becomes shorter and shorter requiring innovation to take place at increasingly faster paces. Thus, efficient resource management is a key challenge in urban design, because this effectively increases the value of $R$ and hence buys innovation time to push the stagnation point into the future.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{./img/bettencourt_growthPlots.pdf} 
+	\caption{Urban growth regimes taken from \citet{Bettencourt2007}. (a) Shows sublinear growth. (b) Shows expoenetial growth (linear). (c) Shows superlinear scaling before resources become limited. (d) Shows the economic collapse in the superlinear regime when resources become limited.} \label{fig:bettencourt_growth}
+\end{figure}
+These regimes are plotted in Figure~\ref{fig:bettencourt_growth}. To avoid the economic collapse of case \eqref{itm:collapse}, a transformation needs to be undergone which resets the initial conditions $Y_0$ and $N(0)$, to begin a new cycle of greater-than-exponential growth. However, $t_c$ for each cycle becomes shorter and shorter requiring innovation to take place at increasingly faster paces (see Figure~\ref{fig:bettencourt_innovation}). Thus, efficient resource management is a key challenge in urban design, because this effectively increases the value of $R$ and hence buys innovation time to push the stagnation point into the future.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{./img/bettencourt_innovation.pdf} 
+	\caption{Representation of the innovation cycles necessary to postpone economic collapse taken from \citet{Bettencourt2007}. Note how the critical time $t_c$ reduces for each cycle.} \label{fig:bettencourt_innovation}
+\end{figure}
 % PLOT GRAPHS AT A LATER DATE
 
 \subsubsection*{Summary}
@@ -166,7 +192,7 @@ It has been argued that cities are overconsuming resources, yet that they are al
 	\item It suggests the \emph{means} by which urban resource management can be improved: namely, a move away from resource `linearisation' towards `circularisation'. 
 	\item It provides a way of \emph{measuring} the success of the models. 
 \end{enumerate}
-In this section, UM will be defined to show how they provide the \emph{motivation} for resource integration. Then UM studies will be cited to show the \emph{means} by which cities can meet challenges and opportunities.
+In this section, UM will be defined to show how it provide the \emph{motivation} for resource integration. Then UM studies will be cited to show the \emph{means} by which cities can meet challenges and opportunities.
 
 Conducting a UM study can be used to understand the processes taking place within it. Such studies imagine the city as an ecosystem (or an organism) and aim to quantify the fluxes of water, energy, waste and other materials into and out of urban populations in order to find the \emph{``sum total of the technical and socioeconoic processes that occur in cities, resulting in growth, production of energy and elimination of waste''} \citep[p. 44]{Kennedy2008}. It is a broad discipline, and as such invidual studies vary in their scope, about the inclusion of energy, water, material and nutrient components and whether the study is related to socioeconomic or political concerns (as in \citet{Hobbes2007}). The key features of an UM study are now described.
 \begin{itemize}

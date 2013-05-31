@@ -1,11 +1,11 @@
-\section{Models} \label{sec:models}
-The model of \citet{Samsatli} is used as a starting point because its general nature means it that it is simple to extend resources and processes which concern energy to a broader model which considers water and waste resources and processes such as agriculture, livestock and water treatment. As specified in Section~\ref{sec:aims}, an initial model will be a prototype based on a small subsistence community, with no spatial or temporal disaggregation. There are two reasons for this: 
+\section{Model development} \label{sec:models}
+The aim of this section is to take the first steps in the development of an integrated resource management model. \citet{Samsatli} is used as a starting point because its general nature means it that it is simple to extend resources and processes which concern energy to a broader scope which considers water and waste resources and processes such as agriculture, livestock and water treatment. As specified in Section~\ref{sec:aims}, an initial model will be a prototype based on a small subsistence community, with no spatial or temporal disaggregation. There are two reasons for this: 
 \begin{enumerate}
 	\item A system of this type is simple to formulate, before moving onto larger, more complicated networks.
 	\item Even subsistence communities are over-consuming resources \citep{Hobbes2005, Hobbes2007, Shandl2006, Haberl2002}. Thus, the integrated resource modelling formulated here can have a useful real-world application.
 \end{enumerate}
 
-Having researched metabolism studies and material flow analyses for a number of such communities, it was decided that Tat Hamlet (Vietnam) would make a suitable case study because of the availability of both a materials flow analysis \citep{Hobbes2007, Shandl2006} and an energy flow analysis \citep{Heezen2003}. Due to limited data in this field, several references concerning similar subsistence community resource accounting can be consulted which can ensure plausible processes and values in formulating and solving a resource flow system such as Tat. Examples include \citet{Alam1997}, \citet{Alam1999} and \citep{Tripathi2001}. Thus, a plausible resource-process network can be formulated from known data about Tat; processes and resource flows observed in similar contexts and creativity.
+Having researched metabolism studies and material flow analyses for a number of such communities, it was decided that Tat Hamlet (Vietnam) would make a suitable case study because of the availability of both a materials flow analysis \citep{Hobbes2007, Shandl2006} and an energy flow analysis \citep{Heezen2003}. Due to limited data in this field, several references concerning similar subsistence community resource accounting can be consulted which can ensure plausible processes and values in formulating and solving a resource flow system such as Tat. Examples include \citet{Alam1997}, \citet{Alam1999} and \citep{Tripathi2001}. Thus, a plausible resource-process network can be formulated from known data about Tat; processes and resource flows observed in similar contexts and creativity. Tat is a village of 105 residents and 69 hectares of farmland.
 
 \subsection{Tat Hamlet resource flow model}
 The first stage of building the model is to decide on the resources and processes that will be modelled. The resources considered outlined in Table~\ref{tab:tat_resources}. Additionally, emissions are considered as a resource which can be produced in some processes. The processes in the village which consume and produce these resources are:
@@ -21,9 +21,9 @@ The first stage of building the model is to decide on the resources and processe
 
 \input{./tabs/tat_resources.tex} 
 
-The $R$ resources and $P$ processes can be linked together in a network which defines all possible paths from source to sink (final demand and wastes). For each process, the relationship between inputs and output resource quantities is defined with the production coefficient $k_{rp}$ which reflect the net resource balance through the process. For example, for $k_{rp}=k_{electricity, household appliances}=-10}$ and $k_{light, household appliances}=1$, thus 1.2 units of blight is produced for every 10 units of electricity consumed (indicating a 10\% efficiency of the light---shown be the fact that $k_{waste heat, household appliances}=9$).
+The $R$ resources and $P$ processes can be linked together in a network which defines all possible paths from source to sink (final demand and wastes). For each process, the relationship between inputs and output resource quantities is defined with the production coefficient $k_{rp}$ which reflect the net resource balance through the process. For example, for $k_{rp}=k_{electricity, household~appliances}=-10}$ and $k_{light, household~appliances}=1$, thus 1.2 units of blight is produced for every 10 units of electricity consumed (indicating a 10\% efficiency of the light---shown be the fact that $k_{waste~heat, household~appliances}=9$).
 
-The parameters and decision variables for the model are given in Table~\ref{tab:tat_params_vars}. The objective function in Equation~\eqref{eq:tat_basic_OF} minimises the cost of importing resources. The primary constraint in Equation~\eqref{eq:tat_basic_balance} is a mass balance of each resource, such that the sum of the imports and resource consumption in any process equals that of exports and resource production from processes. Constraint~\eqref{eq:tat_basic_processLimits} set the boundaries of the number of any particular process which can take place (corresponding to land amount or the number of houses in which a technology is adopted). A non-negativity constraint is applied to the imports in Equation~\eqref{eq:tat_basic_imports}. Finally, a variable constraint on emissions is imposed on the system in Equation~\eqref{eq:tat_basic_emissions}---the limit of this value can be varied and plotted against the objective function value in a Pareto-optimisation of cost and emissions.
+The parameters and decision variables for the model are given in Tables~\ref{tab:tat_params} and \ref{tab:tat_vars}\footnote{Where units are given in kg, they can be replaced with MJ for the case of energy resources.}. The objective function in Equation~\eqref{eq:tat_basic_OF} minimises the cost of importing resources. The primary constraint in Equation~\eqref{eq:tat_basic_balance} is a mass balance of each resource, such that the sum of the imports and resource consumption in any process equals that of exports and resource production from processes. Constraint~\eqref{eq:tat_basic_processLimits} set the boundaries of the number of any particular process which can take place (corresponding to land amount or the number of houses in which a technology is adopted). A non-negativity constraint is applied to the imports in Equation~\eqref{eq:tat_basic_imports}. Finally, a variable constraint on emissions is imposed on the system in Equation~\eqref{eq:tat_basic_emissions}---the limit of this value can be varied and plotted against the objective function value in a Pareto-optimisation of cost and emissions.
 \begin{align}
 	\min_{I_r,E_r,(NP)_p} \Bigg\{z&=\sum_{r=1}^R c_rI_{r} \Bigg\} \label{eq:tat_basic_OF} \\
 	I_r&=D_r-\sum_{p=1}^{P}k_{rp} P_p NP_p + E_r \label{eq:tat_basic_balance} \\
@@ -31,13 +31,38 @@ The parameters and decision variables for the model are given in Table~\ref{tab:
 	I_r &\geq 0 \label{eq:tat_basic_imports} \\
 	\sum_{p=1}^P e_p P_p (NP)_p &\leq \mbox{emissions target} \label{eq:tat_basic_emissions}.
 \end{align}
-\input{./tabs/tat_params_vars.tex} 
+\input{./tabs/tat_params.tex} 
+\input{./tabs/tat_vars.tex} 
 
-\subsection{Implementation}
-The Python library `Pyomo' is used to build the model (which is a front end language compiler for mathematical programming similar to GAMS), and solved using the GNU Linear Programming Kit.
+\subsubsection*{Implementation and results}
+The Python library `Pyomo' is used to build the model (which is a front end language compiler for mathematical programming similar to GAMS), and solved using the GNU Linear Programming Kit. A Pareto-optimisation is performed where by the allowable emissions limits is varied whilst the objective function (of import costs) is minimised. Optimial variable values are returned for exports, imports, and process numbers. The results are presented in Figure~\ref{fig:tat_pareto} and Tables~\ref{tab:tat_basic_results} and \ref{tab:tat_basic_NP_results}.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{./img/tat_pareto.pdf}
+	\caption{Pareto optimisation for emissions and resource import costs.} \label{fig:tat_pareto}
+\end{figure}
+\input{./tabs/tat_basic_results.tex} 
+\input{./tabs/tat_basic_NP_results.tex} 
 
+\subsubsection*{Discussion}
+The following results are noted:
+\begin{itemize}
+	\item If the model is run imposing realistic values for upper bounds on resource limits, then the model is infeasible and can't be solved. Thus, the problem has been unbounded, meaning there are some unrealistic results, such as the import of heat and light. 
+	\item These concerns aside, the model shows how resources and processes in the village can best best be used to meet final demands for resources at minimum cost. It can also prompt ideas for improved resource management. For example, there is surplus biomass production in the village---perhaps this can be diverted to an energy generator which takes biomass as feedstock. 
+\end{itemize}	
+Future work in the modelling:
+\begin{itemize}
+	\item A future version of the model can consider the biomass energy technology can be included in the next development of the model, to see if it yields cost and carbon savings. 
+	\item Another option to develop this model would be to make it a `technology choice' model. This would take a database of available technologies as inputs, and determine whether or not the technology should be included in the village (thus, a Boolean decision variable representing each technology should be introduced).
+	\item Future developments can make the model more sophisticated by considering the income from exports.
+	\item Finanlly, resource quality consideration can be taken into account. This is the subject of the next section.
+\end{itemize}
 
 \subsection{Considering quality considerations in a water network}
-The resource allocation model described above does a good job of allocating resources to users in the village, however it doesn't yet consider the quality of those resources. For example, water for human consumption (in final demand) must be achieve a minimum standard of quality. Moreover, the quality of resources out of any process will depend on the quality of resources going into the process. There is a `null model' approach to modelling quality paramters which is to sub-divide each resource into several discrete resources of differing quality (for example, there could be five different water qualities: very poor, poor, average, good and very good, which are represented by five different resources). Poor water can go through a treatment process to improve quality (which would have an associated energetic, and hence financial cost). Final demands can take any water resource with a quality above a minimum threshold. Clearly a model of this nature will become rapidly become very large and inelegent for networks of significant maginatude, presenting problems of computational tractability. Furthermore, the discrete levels of quality fail to capture the continous resource quality exhibited in real systems.  Thus, a key task of the research is to model the resources and their qualities in a computationally tractable fashion which sufficiently represents real situations.
+The resource allocation model described above does a good job of allocating resources to users in the village, however it doesn't yet consider the quality of those resources. For example, water for human consumption (in final demand) must be achieve a minimum standard of quality. Moreover, the quality of resources out of any process will depend on the quality of resources going into the process. Thus a method is required which can account for this.
 
+\subsubsection*{The null model approach}
+There is a simple way to model resource qualities, such that no significant changes are required to be made to the first model---this shall be termed the `null model'. In this approach each resource is sub-divided into several discrete resources of differing quality (for example, there could be five different water qualities: very poor, poor, average, good and very good, which are represented by five different resources). Poor water can go through a treatment process to improve quality (which would have an associated energetic, and hence financial cost). Final demands can take any water resource with a quality above a minimum threshold. Clearly a model of this nature will become rapidly become very large and inelegent for networks of significant magnitude, presenting problems of computational tractability. Furthermore, the discrete levels of quality fail to capture the continous resource quality exhibited in real systems.  Thus, a key task of this research is to model the resources and their qualities in a computationally tractable fashion which sufficiently represents real situations. The resulting model can then be compared to the null model for size and speed.
+
+\subsubsection*{Quality model development}
 With this in mind, some initial attempts have been made to incorporate resource quality in the model.
