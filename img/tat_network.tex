@@ -1,0 +1,79 @@
+% Author: Till Tantau
+% Source: The PGF/TikZ manual
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=1.4cm,
+                    semithick]
+  \tikzstyle{every state}=[draw]
+  \tikzstyle{task}=[rectangle, draw, minimum width=3.3cm]
+
+  \node[task] (agr) {Agriculture};
+  \node[task] (aqua) [above of=agr] {Aquaculture};
+  \node[task] (cook) [below of=agr] {Cooking};
+  \node[task] (heat) [below of=cook] {Heating};
+  \node[task] (apps) [below of=heat] {Household appliances};
+  \node[task] (LS) [below of=apps] {Livestock};
+  \node[task] (trans) [below of=LS] {Transport};
+  
+  \node[state] (Wst) [left of=aqua, node distance=4.8cm] {Wst};
+  \node[state] (B) [left of=agr, node distance=4.8cm] {B};
+  \node[state] (WH) [left of=cook, node distance=4.8cm] {WH};
+  \node[state] (E) [left of=heat, node distance=4.8cm] {E};
+  \node[state] (P) [left of=apps, node distance=4.8cm] {P};
+  \node[state] (M) [left of=LS, node distance=4.8cm] {M};
+
+  \node[state] (Wtr) [right of=aqua, node distance=4.8cm] {Wtr};
+  \node[state] (F) [right of=agr, node distance=4.8cm] {F};
+  \node[state] (MP) [right of=cook, node distance=4.8cm] {MP};
+  \node[state] (H) [right of=heat, node distance=4.8cm] {H};
+  \node[state] (L) [right of=apps, node distance=4.8cm] {L};
+
+  \node[] (Wtr-D) [right of=Wtr] {};
+  \node[] (F-D) [right of=F] {};
+  \node[] (MP-D) [right of=MP] {};
+  \node[] (H-D) [right of=H] {};
+  \node[] (L-D) [right of=L] {};
+
+  \node[] (B-I) [left of=B]  {};
+  \node[] (E-I) [left of=E]  {};
+  \node[] (P-I) [left of=P]  {};
+  \node[] (Wtr-I) [above of=Wtr]  {};
+  \node[] (F-I) [above right of=F]  {};
+
+  \path (agr) edge (WH);
+  \path (apps) edge (WH);
+  \path (cook) edge (Wst);
+  \path (heat) edge (Wst);
+  \path (B) edge (aqua);
+  \path (B) edge (agr);
+  \path (B) edge (cook);
+  \path (B) edge (heat);
+  \path (aqua) edge (B);
+  \path (agr) edge (B);
+  \path (E) edge (agr);
+  \path (E) edge (apps);
+  \path (P) edge (trans);
+  \path (P) edge (agr);
+  \path (M) edge (agr);
+  \path (LS) edge (M);
+
+  \path (Wtr) edge (agr);
+  \path (agr) edge (F);
+  \path (aqua) edge (F);
+  \path (agr) edge (MP);
+  \path (cook) edge (H);
+  \path (heat) edge (H);
+  \path (apps) edge (L);
+
+  \draw[dashed,->] (Wtr) -- (Wtr-D);
+  \draw[dashed,->] (F) -- (F-D);
+  \draw[dashed,->] (MP) -- (MP-D);
+  \draw[dashed,->] (H) -- (H-D);
+  \draw[dashed,->] (L) -- (L-D);
+
+  \draw[->>] (Wtr-I) -- (Wtr);
+  \draw[->>] (B-I) -- (B);
+  \draw[->>] (E-I) -- (E);
+  \draw[->>] (P-I) -- (P);
+  \draw[->>] (F-I) -- (F);
+  
+\end{tikzpicture}
