@@ -6,6 +6,11 @@
 *.toc
 *.bbl
 *.blg
+*.png
+*.r
+*.RData
+*.Rhistory
+*.csv
 vc.tex
 aims/
 notes/

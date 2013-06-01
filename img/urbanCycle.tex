@@ -1,0 +1,22 @@
+% A simple graph with straight and bend arrows and loops
+% Stefan Kottwitz
+
+%\documentclass{article}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+%\begin{document}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+  thick,main node/.style={}]
+
+  \node[main node] (1) {Migration};
+  \node[main node] (2) [below right of=1] {Scale and aggolmeration};
+  \node[main node] (3) [below left of=2] {Trade};
+  \node[main node] (4) [below left of=1] {Prosperity};
+
+  \path[every node/.style={}]
+    (1) edge [bend left] (2)
+    (2) edge [bend left] (3)
+    (3) edge [bend left] (4)
+    (4) edge [bend left] (1);
+\end{tikzpicture}
+%\end{document}
