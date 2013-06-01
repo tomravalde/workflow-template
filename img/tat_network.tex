@@ -5,7 +5,7 @@
                     semithick]
   \tikzstyle{every state}=[draw]
   \tikzstyle{task}=[rectangle, draw, minimum width=3.3cm]
-
+% Processes
   \node[task] (agr) {Agriculture};
   \node[task] (aqua) [above of=agr] {Aquaculture};
   \node[task] (cook) [below of=agr] {Cooking};
@@ -13,32 +13,32 @@
   \node[task] (apps) [below of=heat] {Household appliances};
   \node[task] (LS) [below of=apps] {Livestock};
   \node[task] (trans) [below of=LS] {Transport};
-  
+% Resources (no demand)
   \node[state] (Wst) [left of=aqua, node distance=4.8cm] {Wst};
   \node[state] (B) [left of=agr, node distance=4.8cm] {B};
   \node[state] (WH) [left of=cook, node distance=4.8cm] {WH};
   \node[state] (E) [left of=heat, node distance=4.8cm] {E};
   \node[state] (P) [left of=apps, node distance=4.8cm] {P};
   \node[state] (M) [left of=LS, node distance=4.8cm] {M};
-
+% Resources (demand)
   \node[state] (Wtr) [right of=aqua, node distance=4.8cm] {Wtr};
   \node[state] (F) [right of=agr, node distance=4.8cm] {F};
   \node[state] (MP) [right of=cook, node distance=4.8cm] {MP};
   \node[state] (H) [right of=heat, node distance=4.8cm] {H};
   \node[state] (L) [right of=apps, node distance=4.8cm] {L};
-
+% Dummy nodes to draw demand arrows
   \node[] (Wtr-D) [right of=Wtr] {};
   \node[] (F-D) [right of=F] {};
   \node[] (MP-D) [right of=MP] {};
   \node[] (H-D) [right of=H] {};
   \node[] (L-D) [right of=L] {};
-
+% Dummy nodes for import arrows
   \node[] (B-I) [left of=B]  {};
   \node[] (E-I) [left of=E]  {};
   \node[] (P-I) [left of=P]  {};
   \node[] (Wtr-I) [above of=Wtr]  {};
   \node[] (F-I) [above right of=F]  {};
-
+% Paths for resources (no demand)
   \path (agr) edge (WH);
   \path (apps) edge (WH);
   \path (cook) edge (Wst);
@@ -55,7 +55,7 @@
   \path (P) edge (agr);
   \path (M) edge (agr);
   \path (LS) edge (M);
-
+% Paths for resources (demand)
   \path (Wtr) edge (agr);
   \path (agr) edge (F);
   \path (aqua) edge (F);
@@ -63,17 +63,16 @@
   \path (cook) edge (H);
   \path (heat) edge (H);
   \path (apps) edge (L);
-
+% Demand arrows
   \draw[dashed,->] (Wtr) -- (Wtr-D);
   \draw[dashed,->] (F) -- (F-D);
   \draw[dashed,->] (MP) -- (MP-D);
   \draw[dashed,->] (H) -- (H-D);
   \draw[dashed,->] (L) -- (L-D);
-
+% Import arrows
   \draw[->>] (Wtr-I) -- (Wtr);
   \draw[->>] (B-I) -- (B);
   \draw[->>] (E-I) -- (E);
   \draw[->>] (P-I) -- (P);
-  \draw[->>] (F-I) -- (F);
-  
+  \draw[->>] (F-I) -- (F); 
 \end{tikzpicture}

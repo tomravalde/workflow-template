@@ -11,6 +11,7 @@
 *.RData
 *.Rhistory
 *.csv
+*.swp
 vc.tex
 aims/
 notes/
