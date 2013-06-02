@@ -1,0 +1,84 @@
+# R resources
+set R := biomass elec food heat light manure petrol waste heat_waste water ;
+
+# P processes
+set P := agriculture aquaculture cooking houseAppliances houseHeat livestock transport ;
+
+# emissions (related to processes)
+set E := emissions ;
+
+# Parameters
+param: imports_min imports_max :=
+biomass 0 None
+elec 0 None
+food 0 None
+heat 0 0
+light 0 0
+manure 0 0
+petrol 0 None
+waste 0 0
+heat_waste 0 0
+water 0 None ;
+
+param demand :=
+food 1323
+heat 10150
+light 5.44
+water 3133334 ;
+
+param cost_resource :=
+biomass 0.72
+elec 1.94
+food 200
+petrol 104
+water 0.05 ;
+
+# Process/resource production coefficients reflect net balance through the process. i.e. in agriculture, 1.2 units of biomass are produced for every 0.002 units of petrol consumed.
+param prod_coeff :=
+biomass agriculture 1.2065
+biomass aquaculture 5.5385
+biomass cooking -0.11166
+biomass houseHeat -0.11158
+elec agriculture -0.01331
+elec houseAppliances -10
+food agriculture 1 
+food aquaculture 1 
+heat cooking 1
+heat houseHeat 1
+light houseAppliances 1
+manure agriculture -0.478474 
+manure livestock 1
+petrol agriculture -0.00195
+petrol transport 1
+waste cooking 0.0111658
+waste houseHeat 0.011158
+heat_waste agriculture 0.0119765
+heat_waste houseAppliances 9
+water agriculture -1532.94227 ;
+
+# Unit emissions rate in a process.
+param processEmissions :=
+agriculture 0.0046
+cooking 0.101
+houseAppliances 1.632
+houseHeat 0.100
+transport -2.36 ;
+
+# Allowable limits for process volumes (e.g. representing the amount of land that can be used in agriculture; or the number of houses with electrical appliances).
+param: process_number_min process_number_max :=
+agriculture 50 69
+aquaculture 1 1
+cooking 80 105
+houseAppliances 0 200
+houseHeat 90 105
+livestock 0 105
+transport 0 20 ;
+
+param process_rate :=
+agriculture 14.811
+aquaculture 130
+cooking 58
+houseAppliances 0.0518
+houseHeat 38.67
+livestock 5.62
+transport -0.2 ;

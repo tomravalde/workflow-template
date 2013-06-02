@@ -1,0 +1,54 @@
+# Declare the input sets
+## This is a simple problem with one process that pumps water
+set R := sourceWater pumpedWater elec ;
+set P := pump ;
+set Q := mass energy ;
+
+# Physical coefficients for converting resources to qualities
+# Assume that water is measured in litres, then
+# 1 L = 1 kg and assume h_ref = 0
+# Similarly for electricity, measured in joules
+# 1 J imported = 1 J in the module, 0 mass
+param resource_quality :=
+sourceWater mass 1
+pumpedWater mass 1
+pumpedWater energy 1
+elec energy 1 ;
+
+param cheat :=
+sourceWater mass 1
+pumpedWater mass 1
+pumpedWater energy 0.01019367991
+elec energy 1 ;
+
+
+# Coefficients for producing resources are slightly different
+# These reflect the net balance through the process, i.e.
+# for every "unit" the process produces, there will be a net consumption of 0 water mass,
+# but with a perfectly efficient pump, -1 elec = +1 water 0.01019367991
+param prod_coeff :=
+pump pumpedWater energy 1
+pump elec energy -1 
+pump sourceWater mass -0.01019367991
+pump pumpedWater mass 0.01019367991 ;
+
+# The demand is now specified in native units
+# so 1 kg of water and 98.1 J
+param demand_quality :=
+pumpedWater mass 1
+pumpedWater energy 98.1 ;
+
+param demand_quantity :=
+pumpedWater 1 ;
+
+## Which quality do we care about for each process
+param qual_coeff :=
+pump pumpedWater mass 1
+pump sourceWater mass 1
+pump pumpedWater energy 1
+pump elec energy 1 ;
+
+## Made up numbers for cost per unit quality
+param cost :=
+sourceWater mass 1
+elec energy 0.14 ;
