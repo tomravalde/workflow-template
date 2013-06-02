@@ -86,4 +86,14 @@ The objective function in Equation~\eqref{eq:water_OF} minimises the total cost 
 	0 &= I_r + \sum_{p=1}^P\mbox{prod\_qty}_{pr} - \mbox{D\_qty}_{r}-E_r \label{eq:qty_balance} 
 \end{align}
 
-An initial formulation has modelled a pump (a process) which requires water to generate electricity (resources), by considering both water's mass energy (head) and the electrical energy produced as resources. The next step is to extend this formulation to consider other processes which use water, before putting it into the Tat model.
+An initial formulation has modelled a pump (a process) which requires water to generate electricity (resources), by considering both water's mass energy (head) and the electrical energy produced as resources---see Figure~\ref{fig:pump}). The next step is to extend this formulation to consider other processes which use water, before putting it into the Tat model.
+
+\begin{figure}[h]
+	\centering
+	\input{./img/water_network}
+	\caption{Pump production model. Cirles represent resources; boxes represent process, dotted arrows represent demands; and double headed arrows represent imports.} \label{fig:pump}
+\end{figure}
+Running the model gives the results (Tables~\ref{tab:pump_imports_exports} and \ref{tab:pump_resource_quality}) expected (assuming 100\% efficiency): for every kilogram of water through pump, the 98.1 J of electricity gives the water 98.1 J of energy (equivalent to 1 m of head). From this point, the next stage is to expand this model to a bigger water network which considers more processes, resources and qualities (for example water treatment processes which consider water contamination as a quality indicator).
+
+\input{./tabs/pump_imports_exports.tex} 
+\input{./tabs/pump_quality_production.tex} 

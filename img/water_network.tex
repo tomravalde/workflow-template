@@ -1,0 +1,28 @@
+% Author: Till Tantau
+% Source: The PGF/TikZ manual
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[draw]
+  \tikzstyle{task}=[rectangle, draw, minimum width=3.3cm]
+
+  \node[task] (pump) {Pump};
+
+  \node[state] (SW) [above left of=pump] {SW};
+  \node[state] (E) [above right of=pump] {E};
+  \node[state] (PW) [below of=pump] {PW};
+
+  \node[] (PW-D) [below of=PW] {};
+  
+  \node[] (SW-i) [above of=SW] {};
+  \node[] (E-i) [above of=E] {};
+
+  \path (SW) edge (pump);
+  \path (E) edge (pump);
+  \path (pump) edge (PW);
+
+  \draw[dashed,->] (PW) -- (PW-D);
+
+  \draw[->>] (SW-i) -- (SW);
+  \draw[->>] (E-i) -- (E);
+\end{tikzpicture}
