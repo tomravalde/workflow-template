@@ -22,13 +22,15 @@
 \usepackage[]{times}
 \usepackage{enumerate}
 \usepackage{listings}
-\lstset{language=Python}
+\lstset{language=Python,
+	basicstyle=\ttfamily\small,
+	breaklines=true}
 
-\usepackage{titlesec}
-\newcommand{\sectionbreak}{\clearpage}
+%\usepackage{titlesec}
+%\newcommand{\sectionbreak}{\clearpage}
 
-%\let\stdsection\section
-%\renewcommand\section\{\newpage\stdsection}
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
 
 \usepackage{fancyhdr}
 \setlength{\headheight}{15.2pt}
