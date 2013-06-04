@@ -23,13 +23,11 @@
 % Resources (demand)
   \node[state] (Wtr) [right of=aqua, node distance=4.8cm] {Wtr};
   \node[state] (F) [right of=agr, node distance=4.8cm] {F};
-  \node[state] (MP) [right of=cook, node distance=4.8cm] {MP};
-  \node[state] (H) [right of=heat, node distance=4.8cm] {H};
-  \node[state] (L) [right of=apps, node distance=4.8cm] {L};
+  \node[state] (H) [right of=cook, node distance=4.8cm] {H};
+  \node[state] (L) [right of=heat, node distance=4.8cm] {L};
 % Dummy nodes to draw demand arrows
   \node[] (Wtr-D) [right of=Wtr] {};
   \node[] (F-D) [right of=F] {};
-  \node[] (MP-D) [right of=MP] {};
   \node[] (H-D) [right of=H] {};
   \node[] (L-D) [right of=L] {};
 % Dummy nodes for import arrows
@@ -59,14 +57,12 @@
   \path (Wtr) edge (agr);
   \path (agr) edge (F);
   \path (aqua) edge (F);
-  \path (agr) edge (MP);
   \path (cook) edge (H);
   \path (heat) edge (H);
   \path (apps) edge (L);
 % Demand arrows
   \draw[dashed,->] (Wtr) -- (Wtr-D);
   \draw[dashed,->] (F) -- (F-D);
-  \draw[dashed,->] (MP) -- (MP-D);
   \draw[dashed,->] (H) -- (H-D);
   \draw[dashed,->] (L) -- (L-D);
 % Import arrows
