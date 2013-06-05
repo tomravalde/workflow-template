@@ -30,6 +30,7 @@ The first stage of building the model is to decide on the resources and processe
 The $R$ resources and $P$ processes can be linked together in a network which defines all possible paths from source to sink (final demand and wastes) as shown in Figure~\ref{fig:tat_network}. For each process, the relationship between input and output resource quantities is defined with the production coefficient $k_{rp}$ which reflect the net resource balance through the process. For example, for $k_{rp}=k_{electricity, household~appliances}=-10$ and $k_{light, household~appliances}=1$, thus 1 unit of light is produced for every 10 units of electricity consumed (indicating a 10\% efficiency of the light---shown by the fact that $k_{waste~heat, household~appliances}=9$).
 
 Tables~\ref{tab:tat_params} and \ref{tab:tat_vars} give the parameters and decision variables for the model\footnote{Where units are given in kg, they can be replaced with MJ for the case of energy resources.}. The objective function in Equation~\eqref{eq:tat_basic_OF} minimises the cost of importing resources. The primary constraint given by Equation~\eqref{eq:tat_basic_balance} is a mass balance of each resource, such that the sum of the imports and resource consumption in any process equals that of exports and resource production from processes. Constraint~\eqref{eq:tat_basic_processLimits} set boundaries on the number of any particular processes which can take place (corresponding to land amount or the number of houses in which a process is adopted). A non-negativity constraint is applied to the imports in Equation~\eqref{eq:tat_basic_imports}. Finally, a variable constraint on emissions is imposed on the system in Equation~\eqref{eq:tat_basic_emissions}---the limit of this value can be varied and plotted against the objective function value in a Pareto-optimisation of cost and emissions.
+
 \begin{align}
 	\min_{I_r,E_r,(NP)_p} \Bigg\{z&=\sum_{r=1}^R c_rI_{r} \Bigg\} \label{eq:tat_basic_OF} \\
 	I_r&=D_r-\sum_{p=1}^{P}k_{rp} P_p NP_p + E_r \label{eq:tat_basic_balance} \\
@@ -66,6 +67,7 @@ The model as it stands suffers limitations. For example, it doesn't consider tec
 
 \subsection{Considering quality considerations in a water network}
 The resource allocation model described above does a good job of allocating resources to users in the village, however it doesn't yet consider the quality of those resources. For example, water for human consumption (in final demand) must be achieve a minimum standard of quality, which must be achieved in water treatment processes. Examples of what is meant by `qualities' are given in Table~\ref{tab:quality_catalogue}. Moreover, the quality of resources out of any process will depend on the quality of resources going into the process. Thus a method is required which can account for this. Two approaches will now be described.
+
 \input{./tabs/quality_catalogue.tex} 
 
 \subsubsection*{The `null model' approach}

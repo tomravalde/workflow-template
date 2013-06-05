@@ -10,7 +10,8 @@
 \usepackage{fullpage}
 \usepackage{float}
 \usepackage{multirow}
-%\usepackage{fixltx2e}
+\usepackage{fixltx2e}
+\usepackage[bottom]{footmisc}
 \usepackage{natbib}
 \bibpunct{(}{)}{;}{a}{,}{,}
 %\usepackage{nomencl}
@@ -31,7 +32,7 @@
 %\newcommand{\sectionbreak}{\clearpage}
 
 \let\stdsection\section
-\renewcommand\section{\newpage\stdsection}
+\renewcommand\section{\clearpage\stdsection}
 
 \usepackage{fancyhdr}
 \setlength{\headheight}{15.2pt}
