@@ -29,7 +29,7 @@ Having outlined the technical characteristics of various UES models, the model o
 	\item \emph{Renewable} energy sources and their stochastic nature are considered. Wind (winter dominant) and PV (summer dominant) can be combined with non-renewables.
 	\item \emph{Centralised} and \emph{decentralised} systems are combined. The former includes wind turbines, large scale cooling and a CHP plant; the latter considers PV cells, solar thermal  collectors, small heat pumps and boilers.
 	\item \emph{Multiple objectives} are considered. The objective is to minimise total cost: (investment, maintenance, operation and so on). Sensitivity analysis is used to impose varying emissions' limits, thus both the minimisation of costs and the achievement of emissions targets are objectives of the model through Pareto optimisation.
-	\item \emph{MILP} is the method used. The model is built using GAMS and solved with the CPLEX solver.
+	\item \emph{MILP} is the method used. 
 	\item \emph{Design} and \emph{operation} of the system are both solved. Thus decision variables include: technology choice, size and location; operating strategies; and network layout.
 	\item \emph{Linearisation} of non-linear technology size-cost relationships is undertaken using piecewise linearisation.
 	\item \emph{Uncertainty} in wind conditions is tested by sensitivity analysis\footnote{For this reason, this isn't stochastic modelling. Nevertheless it is a way of considering a model with uncertain inputs.}. Sensitivity analysis is also used to measure the effects of markets and changes in heating demand.

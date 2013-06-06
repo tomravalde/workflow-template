@@ -2,7 +2,7 @@
 \usepackage{ESA_style}
 
 \immediate\write18{sh ./vc}
-\input{vc}
+\input{vc} % Uncomment if not using version control
 
 \begin{document}
 
@@ -30,10 +30,11 @@
 \clearpage
 \subsection{Data script}
 \lstinputlisting{./code/water_data.dat}
-\section{Gantt chart}
+\section{Gantt chart} \label{sec:Gantt}
 \includepdf[pages={-}, landscape=true]{Gantt.pdf}
 
 \bibliographystyle{kbib}
+\addcontentsline{toc}{section}{References}
 \bibliography{9mnth}
 
 \end{document}
