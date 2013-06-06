@@ -11,7 +11,7 @@ LaTeX_template
 
 - `main.tex` is the main document which calls all the other `*.tex` and `*.bib` files.
 
-- `main.tex.latexmain` tells vim-LaTeX that `main.tex` is the main docuement file, such that the document can be compiled from any LaTeX document.
+- `main.tex.latexmain` tells vim-LaTeX that `main.tex` is the main  document file, such that the document can be compiled from any file opened within Vim.
 
 - `*.tex`, images, tables and source-code are all kept in separate sub-directories.
 
@@ -20,9 +20,6 @@ LaTeX_template
 - a `vc.tex` file will be generated which contains macros which allows you to insert revision information in the document---see the `\fancyfoot` definitions in the `*.sty` style file.
 - (Comment out these commands if not using version control).
 
-## Vim-LaTeX and multiple file projects
-- The document can be compiled from any sub-file opened within Vim if `main.tex.latexmain` exists when `main.tex` is the main file.
-
-## Biblography style
+## Bibliography style
 - `kbib.bst` is used to such that references are printed 'Surname, Firstname' in the Reference list.
 - This is used in conjuction with the `natbib` package, for Author-Year citations.
