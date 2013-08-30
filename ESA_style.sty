@@ -1,13 +1,17 @@
 \ProvidesPackage{ESA_style}
 
-\usepackage[a4paper]{geometry}
-%\usepackage[top=3cm, bottom=3cm, left=2.5cm, right=10cm]{geometry}
+%\usepackage[a4paper]{geometry}
+\usepackage[
+	left=24.8mm, 
+	textwidth=100mm,
+	marginparsep=2pc,
+	marginparwidth=12pc]{geometry}
 \usepackage{parskip}
 \usepackage[pdftex]{graphicx}
 \usepackage{subfig}
 \usepackage{array}
 \usepackage{amsmath}
-\usepackage{fullpage}
+%\usepackage{fullpage}
 \usepackage{pdfpages}
 \usepackage{float}
 \usepackage{multirow}
@@ -48,3 +52,22 @@
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\COtwo}{CO\textsubscript{2} }
+
+% Set article title in similar format to Kieren Healy.
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+
+\includegraphics[width=0.5\textwidth]{./img/ImperialLogo.jpg}\\[3em]
+\begin{flushleft}
+	%\textsc{\large Department of Civil and Environmental Engineering} \\[1.5cm]
+	{\LARGE \bfseries \sffamily \bigskip \bigskip \@title} \\[0.5em]
+	  
+	{\Large \@author} \\ %[0.2cm]
+	{\normalsize \bigskip \@date}
+    \end{flushleft}\egroup
+}
+\makeatother
+
+\renewcommand{\abstractname}{}
+
+

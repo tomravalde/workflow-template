@@ -12,6 +12,7 @@
 *.Rhistory
 *.csv
 *.swp
+framed.sty
 vc.tex
 aims/
 notes/

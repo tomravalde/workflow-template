@@ -13,7 +13,6 @@
 \author{Tom Ravalde\thanks{thomas.ravalde08@imperial.ac.uk} \\[0.3em]
 \emph{Civil and Environmental Engineering}}
 \date{\today}
-	
 
 \begin{document}
 \maketitle
@@ -25,7 +24,35 @@
 \end{abstract}
 
 \section{Introduction}
-In this report. You can email me at \texttt{thomas.ravalde08@imperial.ac.uk}.
+
+\subsection{Null model}
+This is the most basic model built.
+
+Objective :
+\begin{align}
+\min_{I_r,E_r,F_p} \Bigg\{&\sum_{r}^R c_rI_{r} \Bigg\} \\
+\end{align}
+Quantity balance (mass and energy)
+\begin{align}
+I_r+G_r &= D_r + E_r \\
+\end{align}
+
+Resource production
+\begin{align}
+G_r&=\sum_{p}^{P}k_{pr} F_p \\
+\end{align}
+
+Emissions limit
+\begin{align}
+\sum_{p}^P e_p F_p &\leq \mbox{emissions target} 
+\end{align}
+
+Non-negativity constraints (alternatively, these can be specified between boundaries).
+\begin{align}
+I_r &\geq 0 \label{eq:tat_basic_imports} \\
+E_r &\geq 0 \\
+F_p &\geq 0 
+\end{align}
 
 <<foo, fig.height=4>>=
 1 + 1
