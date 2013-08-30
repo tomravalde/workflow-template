@@ -65,7 +65,7 @@
 \setmonofont[]{Liberation Mono}
 
 \title{Modelling approach comparison study}
-\author{Tom Ravalde\thanks{thomas.ravalde08@imperial.ac.uk} \\[0.3em]
+\author{Tom Ravalde\footnote{\texttt{thomas.ravalde08@imperial.ac.uk}} \\[0.3em]
 \emph{Civil and Environmental Engineering}}
 \date{\today}
 
@@ -81,7 +81,7 @@
 \section{Introduction}
 
 \subsection{Null model}
-This is the most basic model built.
+This is the most basic model built. Some text with a footnote\footnote{This is a footnote}.
 
 Objective :
 \begin{align}
@@ -106,6 +106,41 @@ Non-negativity constraints (alternatively, these can be specified between bounda
 \begin{align}
 I_r &\geq 0 \label{eq:tat_basic_imports} \\
 E_r &\geq 0 \\
+F_p &\geq 0 
+\end{align}
+
+\subsection{PRaQ model}
+PRaQ stands for 'processes, resources and qualities'. 
+
+Objective:
+\begin{align}
+\min_{I_r, F_p, G^{(res)}_{prq}, G^{(qual)}_{prq}, E_r} \Bigg\{ &\sum_q^Q \sum_r^R c_{rq} X_{rq} I_r \Bigg\} \\ 
+\end{align}
+
+Quantity balance
+\begin{align}
+I_r + \sum_p^P G^{(res)}_{pr} &= D^{(res)}_r + E_r \\ 
+\end{align}
+
+Quality balance
+\begin{align}
+\sum_r^R \Bigg( X_{rq} I_r + \sum_p^P G^{(qual)}_{prq} \Bigg) &= \sum_r^R \Bigg( D^{(qual)}_{rq} + X_{rq} E_r \Bigg) \\ 
+\end{align}
+
+Quality production
+\begin{align}
+G^{(qual)}_{prq} &= F_p k_{prq} \\ 
+\end{align}
+
+Balance qualities produced in each process with overall quality produced by the system. This is applied to the production/generation of a resource $r$ with a particular quality $q$ from a given process $p$, which are defined by $\delta_{prq}=1$.
+\begin{align}
+G^{(res)}_{pr} X_{rq} &= G^{(qual)}_{prq} \delta_{rq}, \qquad \mbox{if } \delta_{prq} = 1 
+\end{align}
+
+Non-negativity constraints (altenatively, these can be specified between boundaries)
+\begin{align}
+I_r &\geq 0 \\ 
+E_r &\geq 0 \\ 
 F_p &\geq 0 
 \end{align}
 
