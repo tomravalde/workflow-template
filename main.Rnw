@@ -1,0 +1,76 @@
+\documentclass[a4paper]{article}
+\usepackage{healy-tufte-style}
+
+\immediate\write18{sh ./vc}
+\input{vc} % Uncomment if not using version control
+
+\usepackage{fontspec}
+\setromanfont[]{Linux Libertine}
+\setsansfont[]{Linux Biolinum}
+\setmonofont[]{Liberation Mono}
+
+\title{Modelling approach comparison study}
+\author{Tom Ravalde\thanks{thomas.ravalde08@imperial.ac.uk} \\[0.3em]
+\emph{Civil and Environmental Engineering}}
+\date{\today}
+	
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\bigskip \bigskip
+\begin{abstract}
+	The city of the future needs to reduce their intake and output of resources in order to minimise environmental damage. One way to achieve this is to improve the urban metabolism of such areas. This means that resources (such as energy, water and waste) are reused in processes as much as possible. Currently however, there exist no modelling approaches to optimise systems which deal with such distinct resources. Here, three possible methods are proposed and evaluated with a view to answering the question `how can an urban area most effectively improve its metabolism?'
+\end{abstract}
+
+\section{Introduction}
+In this report. You can email me at \texttt{thomas.ravalde08@imperial.ac.uk}.
+
+<<foo, fig.height=4>>=
+1 + 1
+plot(rnorm(100))
+@
+
+<<bar, fig.height=4>>=
+1 + 1
+plot(rnorm(30))
+@
+
+<<blob, fig.height=4>>=
+plot(rnorm(10))
+@
+
+
+%\input{./tex/title.tex}
+%\pagenumbering{roman} % this is returned to 'arabic' within intro.tex
+%\input{./tex/abstract}
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+%\input{./tex/intro.tex}
+%\input{./tex/methods.tex}
+%\input{./tex/models.tex}
+%\input{./tex/conc.tex}
+%\appendix
+%\usection{Tat Hamlet resource flow model code} \label{sec:code_tat}
+%\subsection{Optimisation script}
+%\lstinputlisting{./code/tat_model.py}
+%\clearpage
+%\subsection{Data script}
+%\lstinputlisting{./code/tat_data.dat}
+%\section{Water quality model}
+%\subsection{Optimisation script}
+%\lstinputlisting{./code/water_model.py}
+%\clearpage
+%\subsection{Data script}
+%\lstinputlisting{./code/water_data.dat}
+%\section{Gantt chart} \label{sec:Gantt}
+%\includepdf[pages={-}, landscape=true]{Gantt.pdf}
+
+%\bibliographystyle{kbib}
+%\addcontentsline{toc}{section}{References}
+%\bibliography{9mnth}
+
+\end{document}
